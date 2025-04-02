@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="./src/output.css"> 
+     <script src="./script.js" defer></script>
+     <style>
+    /* Gradient background class */
+    .gradient-bg {
+        background: linear-gradient(180deg, rgba(45, 112, 253, 0.73) 0%, #163e92 100%);
+    }
+
+    /* Dark mode background */
+    .dark {
+        background-color: #001747;
+    }
+    .todo-container{
+        display: flex;
+        gap: 1rem;
+    }
+    #todoList p{
+        color: black;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+    #todoList .disabled{
+        color: #8f98a8;
+    }
+    .disabled{
+        display: flex;
+        text-decoration: line-through;
+    }
+    input[type="checkbox"]{
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        cursor: pointer;
+    }
+    input[type="checkbox"]::before{
+        content: "\2713";
+        display: inline-block;
+        width: 2rem;
+        height: 2rem;
+        font-size: 1.7rem;
+        text-align: center;
+        border: 0.1rem solid rgba(210, 210, 210, 0.75);
+        border-radius: 50%;
+        color: transparent;
+    }
+    input[type="checkbox"]:checked::before{
+        color: #ffffff;
+        background-color:#00d8a7 ;
+        border: 0.1rem solid #00d8a7;
+        border-radius: 50%;
+    }
+    .scroll::-webkit-scrollbar{
+        width: 0.5rem;
+    }
+    .scroll::-webkit-scrollbar-thumb{
+        background-color:#2d70fd ;
+        border-radius: 0.3rem;
+    }.scroll::-webkit-scrollbar-trac{
+        display: none;
+    }
+
+    </style>
+
+    
+    <title>ToDoList</title>
+</head>
+<body class="gradient-bg h-screen flex items-center flex-col justify-evenly">
+
+    <section class="todo flex flex-col justify-around rounded-[2rem] bg-[#ffffff] p-[3rem] h-[80%] w-[60%] shadow-[0_1rem_3rem_1rem_rgba(0,23,71,0.15)]  ">
+        <h2 class="text-2xl font-bold m-0 uppercase h-[3rem] text-[#001747] text-center ">ToDoList</h2>
+        <div class="input relative flex ">
+            <input type="text" class="input-field w-[100%] border-[0.1rem] border-[#d2d2d2bf] rounded-[0.5rem] p-[1.25rem] text-[1rem]" id="todoInput" placeholder="Add a new to do">
+            <button  class="btn text-[1.1rem] pt-[0.7rem] pb-[0.7rem] pr-[1.5rem] pl-[1.5rem] rounded-[0.3rem] border-none absolute right-[0.5rem] bottom-[0.5rem] text-[#ffffff] bg-[#2d70fd] max-w-[30rem] placeholder-[#b1bacb] ">Add</button>
+        </div>
+        <ul class="scroll p-0 m-0 overflow-y-scroll h-[15rem] scrollbar-thin">
+            <li id="todoList" class="flex flex-col p-[1.3rem] gap-[1.2rem] "></li>
+        </ul>
+        <div>
+            <hr class="counter border-[0.1rem] border-[#eeeeee] " />
+            <div class="counter-container h-[2rem] flex justify-between text-[#b1bacb]">
+                <p class="self-center"><span id="todoCount">0</span>items total</p>
+                <button class="border-none bg-transparent text-[#b1bacb] text-[1rem]" id="deleteButton">Delete All</button>
+            </div>
+        </div>
+    </section>
+    <footer >
+        <div class="footer flex  gap-[1.8rem] bg-[#ffffff] p-[1.2rem] rounded-[0.5rem]">
+            <p class="made-by text-[0.9rem] text-[#405175]">Made By</p>
+            <p class="author text-[0.9rem] text-[#2d70fd] font-bold">Nilima Sahu</p>
+        </div>
+       
+          
+    </footer>
+</body>
+</html>
